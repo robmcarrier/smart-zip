@@ -1,8 +1,9 @@
 <h1>Welcome <%= @profile.name.capitalize if @profile != nil %></h1>
+<hr>
 
-<p><%= current_user.email %></p>
+<p>Your Email: <%= current_user.email %></p>
 <% if @profile != nil %>
-  <p><%= @profile.phone_number %></p>
+  <p>Phone Number: <%= @profile.phone_number %></p>
 <% else %>
   <p><%= link_to'Finish your profile!', new_user_profile_path %></p>
 <% end %>
@@ -10,6 +11,7 @@
 <% @campaigns.each do |c| %>
   <li> <%= link_to c.name, campaign_path(c) %></li>
 <% end %>
-</ul.
+</ul>
+<br><br>
 
 <p><%= link_to("Sign out", destroy_user_session_path, :method => :delete) %></p>

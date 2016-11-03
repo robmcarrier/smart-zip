@@ -1,7 +1,9 @@
 <%= @campaign.name %>
 <ul>
   <% @campaign.respondents.each do |r| %>
-  <li><%= r.name %></li>
+  <li>Name:<%= r.name %></li>
+  <li>Phone:<%= r.phone_number %></li>
+  <hr>
   <% end %>
 </ul>
 <%= link_to "home", root_path %>
