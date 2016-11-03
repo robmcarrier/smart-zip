@@ -1,0 +1,23 @@
+<h1>Welcome <%= @profile.name.capitalize if @profile != nil %></h1>
+
+<p><%= current_user.email %></p>
+<% if @profile != nil %>
+  <p><%= @profile.phone_number %></p>
+<% else %>
+  <p><%= link_to'Finish your profile!', new_user_profile_path %></p>
+<% end %>
+<ul>
+<% @campaigns.each do |c| %>
+  <li> <%= c.name %></li>
+  <ul>
+    <% c.respondents.each do |r| %>
+      <% if r.user_id == current_user.id %>
+
+        <li><%= r.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+</ul.
+
+<p><%= link_to("Sign out", destroy_user_session_path, :method => :delete) %></p>

@@ -1,0 +1,10 @@
+<p>Complete Your Profile</p>
+
+<%= form_for @profile do |f| %>
+  Name: <%= f.text_field :name , autofocus: true %>
+  <br><br>
+  Phone Number: <%= f.telephone_field :phone_number %>
+  <br><br>
+  <%= f.hidden_field :user_id %>
+  <%= f.submit %>
+<% end %>
