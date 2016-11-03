@@ -1,4 +1,6 @@
 <%= @campaign.name %>
+<br>
+<%= @campaign.camp_type %>
 <ul>
   <% @campaign.respondents.each do |r| %>
   <li>Name:<%= r.name %></li>

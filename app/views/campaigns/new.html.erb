@@ -1,0 +1,10 @@
+<h2>New Campaign</h2>
+
+<%= form_for @campaign do |f| %>
+  Name: <%= f.text_field :name, autofocus: true%>
+  <br>
+  Type: <%= f.select :camp_type, Campaign.all.collect{|c| [c.camp_type]}.uniq, :prompt => 'Select One' %>
+  <%= f.hidden_field :user_id %>
+  <br>
+  <%= f.submit %>
+<% end %>
