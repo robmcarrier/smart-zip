@@ -8,6 +8,7 @@
   <p><%= link_to'Finish your profile!', new_user_profile_path %></p>
 <% end %>
 <ul>
+<p>You have <%= @campaigns.count %> campaigns</p>
 <% @campaigns.each do |c| %>
   <li> <%= link_to c.name, campaign_path(c) %></li>
 <% end %>
