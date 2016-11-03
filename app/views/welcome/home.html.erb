@@ -8,15 +8,7 @@
 <% end %>
 <ul>
 <% @campaigns.each do |c| %>
-  <li> <%= c.name %></li>
-  <ul>
-    <% c.respondents.each do |r| %>
-      <% if r.user_id == current_user.id %>
-
-        <li><%= r.name %></li>
-      <% end %>
-    <% end %>
-  </ul>
+  <li> <%= link_to c.name, campaign_path(c) %></li>
 <% end %>
 </ul.
 

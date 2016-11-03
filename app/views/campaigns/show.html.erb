@@ -1,0 +1,7 @@
+<%= @campaign.name %>
+<ul>
+  <% @campaign.respondents.each do |r| %>
+  <li><%= r.name %></li>
+  <% end %>
+</ul>
+<%= link_to "home", root_path %>
